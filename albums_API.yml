@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: Example Photo Service
+  description: Optional multiline or single-line description 
+  version: 0.1.9
+servers:
+  - url: http://api.example.com/v1
+    description: Optional server description, e.g. Main (production) server
+  - url: http://staging-api.example.com
+    description: Optional server description, e.g. Internal staging server for testing
+paths:
+  /albums:
+    get:
+      summary: Returns a list of albums
+      description: Optional extended description.
+      parameters:
+        - name: start_date
+          in: query
+          required: false
+          description: The start date.
+          schema:
+            type: string
+            format: date
+        - name: end_date
+          in: query
+          required: false
+          description: The end date.
+          schema:
+            type: string
+            format: date    
+      responses:
+        '200':    # status code
+          description: information about a pet.
+          content:
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  type: string
+        '400':
+          description: The dates are invalid.
+        '404':
+          description: No albums were found.
+        default:
+          description: Unexpected error
+  /albums/{album_id}:
+    get:
+      summary: Returns more info about an album by its ID.
+      description: Optional extended description.
+      parameters:
+        - name: album_id
+          in: path
+          required: true
+          description: The ID of the album.
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      responses:
+        '200':    # status code
+          description: information about an album.
+          content:
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  type: string
+        '400':
+          description: The album is invalid (not an integer).
+        '404':
+          description: An album with the specified ID was not found.
+        default:
+          description: Unexpected error         
