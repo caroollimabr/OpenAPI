@@ -38,7 +38,7 @@ paths:
                   description: senha do usuário
                   type: string
                   minLength: 6
-                  maxLength: 30
+                  maxLength: 100
                 lgpd:
                   description: indicador que o usuário aceitou LGPD. Deve ser enviada sempre como "true"
                   type: boolean
@@ -92,7 +92,7 @@ paths:
                   description: horário no formato hh:mm, onde a tarefa deverá estar no calendário
                   type: string
                   minLength: 0
-                  maxLength: 50
+                  maxLength: 5
                   pattern: ^[0-2][0-3]:[0-5][0-9]$ # 00:00 a 23:59
                 status:
                   description: porcentagem que aumenta conforme as subtarefas são finalizadas
@@ -207,7 +207,7 @@ paths:
                           description: horário no formato hh:mm, onde a tarefa deverá estar no calendário
                           type: string
                           minLength: 0
-                          maxLength: 50
+                          maxLength: 5
                           pattern: ^[0-2][0-3]:[0-5][0-9]$ # 00:00 a 23:59
                         descricao:
                           description: descrição da atividade
@@ -288,7 +288,7 @@ paths:
                   description: horário no formato hh:mm, onde a tarefa deverá estar no calendário
                   type: string
                   minLength: 0
-                  maxLength: 50
+                  maxLength: 5
                   pattern: ^[0-2][0-3]:[0-5][0-9]$ # 00:00 a 23:59
                 descricao:
                   description: descrição da atividade
