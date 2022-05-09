@@ -100,7 +100,7 @@ paths:
                   format: int32
                   minimum: 0
                   maximum: 100
-                descrição:
+                descricao:
                   description: descrição da atividade
                   type: string
                   minLength: 0
