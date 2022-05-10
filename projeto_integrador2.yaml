@@ -214,6 +214,12 @@ paths:
                           type: string
                           minLength: 0
                           maxLength: 100
+                        status:
+                          description: porcentagem que aumenta conforme as subtarefas são finalizadas
+                          type: integer
+                          format: int32
+                          minimum: 0
+                          maximum: 100
                         subtarefas:
                           description: subtarefas necessárias para finalizar a atividade
                           type: array
@@ -290,6 +296,12 @@ paths:
                   minLength: 0
                   maxLength: 5
                   pattern: ^[0-2][0-3]:[0-5][0-9]$ # 00:00 a 23:59
+               status:
+                  description: porcentagem que aumenta conforme as subtarefas são finalizadas
+                  type: integer
+                  format: int32
+                  minimum: 0
+                  maximum: 100   
                 descricao:
                   description: descrição da atividade
                   type: string
